@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">mobicomp</string>
+    <string name="title">Welcome to Mobile Computing</string>
+    <string name="edit_icon">Edit</string>
+    <string name="search">Search</string>
+    <string name="account">Account</string>
+</resources>
