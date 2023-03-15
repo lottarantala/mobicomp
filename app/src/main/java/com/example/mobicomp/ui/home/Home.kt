@@ -79,15 +79,7 @@ fun Home(
                 backgroundColor = appBarColor,
                 navController = navController
             )
-            /*
-            VirtualLocationButton(
-                backgroundColor = appBarColor,
-                latitude = latitudeValue,
-                longitude = longitudeValue,
-                navController = navController
-            )
 
-             */
             ReminderTab(
                 reminderViewModel = viewModel,
                 navController = navController,
@@ -95,41 +87,6 @@ fun Home(
                 longitude = longitudeValue.value
             )
         }
-    }
-}
-
-@Composable
-private fun VirtualLocationButton(
-    backgroundColor: Color,
-    latitude: MutableState<Float?>,
-    longitude: MutableState<Float?>,
-    navController: NavController
-) {
-    Row(
-        verticalAlignment = Alignment.CenterVertically,
-        modifier = Modifier.background(backgroundColor).padding(16.dp)
-    ) {
-        IconButton(
-            onClick = { navController.navigate(route = "map") },
-            modifier = Modifier.size(48.dp)
-        ) {
-            Icon(imageVector = Icons.Filled.LocationOn, contentDescription = "Virtual location")
-        }
-        Text(
-            text = if (latitude.value != null && longitude.value != null) {
-                String.format(
-                    Locale.getDefault(),
-                    "Lat: %1$.2f, Lng: %2$.2f",
-                    latitude.value,
-                    longitude.value
-                )
-            } else {
-                "Virtual location"
-            },
-            fontSize = 16.sp,
-            modifier = Modifier.weight(1f),
-            color = MaterialTheme.colors.primary
-        )
     }
 }
 
@@ -171,29 +128,6 @@ private fun ReminderTab(
                         reminderViewModel.reloadReminders(tabName, location)
                     }
                 ) {
-                    /*
-                    when(tabName) {
-                        "Occurred" -> {
-                            Icon(
-                                painter = painterResource(id = R.drawable.ic_baseline_checklist_24),
-                                contentDescription = ""
-                            )
-                        }
-                        "Scheduled" -> {
-                            Icon(
-                                painter = painterResource(id = R.drawable.ic_baseline_access_time_24),
-                                contentDescription = ""
-                            )
-                        }
-                        "All" -> {
-                            Icon(
-                                painter = painterResource(id = R.drawable.ic_baseline_layers_24),
-                                contentDescription = ""
-                            )
-                        }
-                    }
-
-                     */
                     ChoiceChipContent(
                         text = tabName,
                         selected = index == tabIndex,

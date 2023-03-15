@@ -21,7 +21,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="API KEY HERE"/>
+            android:value="AIzaSyApoayN_JfxR4n1jnisdQU7mzBjlxEq0B0"/>
 
         <receiver android:name="com.example.mobicomp.ui.reminder.GeofenceBroadcastReceiver">
         </receiver>

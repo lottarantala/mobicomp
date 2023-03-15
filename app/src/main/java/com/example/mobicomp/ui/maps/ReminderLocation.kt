@@ -60,6 +60,7 @@ private fun setMapLongClick(
             navController.previousBackStackEntry
                 ?.savedStateHandle
                 ?.set("location_data", latlng)
+            navController.popBackStack()
         }
     }
 }
