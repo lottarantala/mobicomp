@@ -38,9 +38,7 @@ import android.content.pm.PackageManager
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.core.content.ContextCompat
-import androidx.compose.ui.graphics.Color
 import com.example.mobicomp.Graph
-import com.example.mobicomp.ui.theme.Primary
 import com.example.mobicomp.ui.theme.Primary_dark
 import com.example.mobicomp.ui.theme.Secondary_dark
 import com.google.android.gms.maps.model.LatLng
