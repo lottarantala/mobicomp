@@ -31,6 +31,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.sp
 import com.example.mobicomp.ui.theme.Primary_dark
+import com.example.mobicomp.ui.theme.Secondary_light
 import com.google.android.gms.maps.model.LatLng
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -296,7 +297,6 @@ private fun ReminderListItem(
             }
         )
 
-        // Message
         Text(
             text = reminder.message,
             maxLines = 1,
@@ -314,7 +314,6 @@ private fun ReminderListItem(
             }
         )
 
-        // Date
         Text(
             text = run { reminder.reminderTime.formatToString() },
             maxLines = 1,
@@ -334,7 +333,6 @@ private fun ReminderListItem(
             }
         )
 
-        // Edit button
         IconButton(
             onClick = { navController.navigate(route = "editReminder/${reminder.reminderId}/${reminder.message}/${reminder.reminderTime}") },
             modifier = Modifier
@@ -348,11 +346,11 @@ private fun ReminderListItem(
         ) {
             Icon(
                 imageVector = Icons.Filled.Edit,
-                contentDescription = stringResource(R.string.edit_icon)
+                contentDescription = stringResource(R.string.edit_icon),
+                tint = Secondary_light
             )
         }
 
-        // Delete button
         IconButton(
             onClick = { reminderViewModel.deleteReminder(reminder, tabName = tabSelected, location) },
             modifier = Modifier
@@ -439,7 +437,8 @@ private fun ChoiceChipContent(
         Text(
             text = text,
             style = MaterialTheme.typography.body1,
-            modifier = Modifier.padding(horizontal = 14.dp, vertical = 4.dp)
+            modifier = Modifier.padding(horizontal = 14.dp, vertical = 4.dp),
+            color = Primary_dark
         )
     }
 }

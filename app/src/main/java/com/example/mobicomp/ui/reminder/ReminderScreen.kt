@@ -40,6 +40,9 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.core.content.ContextCompat
 import androidx.compose.ui.graphics.Color
 import com.example.mobicomp.Graph
+import com.example.mobicomp.ui.theme.Primary
+import com.example.mobicomp.ui.theme.Primary_dark
+import com.example.mobicomp.ui.theme.Secondary_dark
 import com.google.android.gms.maps.model.LatLng
 
 @Composable
@@ -81,7 +84,7 @@ fun ReminderScreen(
                         contentDescription = null
                     )
                 }
-                Text(text = "Reminder")
+                Text(text = "Reminder", color = Primary_dark)
             }
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
@@ -109,12 +112,14 @@ fun ReminderScreen(
                     Checkbox(
                         checked = timeEnabled.value,
                         onCheckedChange = { checked -> timeEnabled.value = checked },
-                        modifier = Modifier.padding(10.dp).weight(0.1f),
+                        modifier = Modifier
+                            .padding(10.dp)
+                            .weight(0.1f),
                         colors = CheckboxDefaults.colors(
-                            checkedColor = Color.Green
+                            checkedColor = Secondary_dark
                         )
                     )
-                    Text(text = "Use time")
+                    Text(text = "Use time", color = Primary_dark)
                 }
 
                 Spacer(modifier = Modifier.height(18.dp))
@@ -152,7 +157,8 @@ fun ReminderScreen(
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(50.dp),
-                    shape = RoundedCornerShape(corner = CornerSize(50.dp))
+                    shape = RoundedCornerShape(corner = CornerSize(50.dp)),
+                    colors = ButtonDefaults.buttonColors(backgroundColor = Primary_dark)
                 ) {
                     Text("Save reminder")
                 }
@@ -262,7 +268,7 @@ fun LocationPicker(
                 )
             } else {
                 "Set location"
-            }
+            }, color = Primary_dark
         )
     }
     if (latitude.value != null && longitude.value != null) {
@@ -273,9 +279,12 @@ fun LocationPicker(
                 Toast.makeText(Graph.appContext, "Cleared location", Toast.LENGTH_SHORT).show()
             },
             shape = RoundedCornerShape(corner = CornerSize(50.dp)),
-            modifier = Modifier.fillMaxWidth(1f).size(55.dp).height(58.dp)
+            modifier = Modifier
+                .fillMaxWidth(1f)
+                .size(55.dp)
+                .height(58.dp)
         ) {
-            Text(text = "Clear location")
+            Text(text = "Clear location", color = Primary_dark)
         }
     }
 }

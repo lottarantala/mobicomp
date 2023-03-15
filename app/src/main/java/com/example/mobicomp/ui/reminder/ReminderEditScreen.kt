@@ -19,6 +19,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.example.core.domain.entity.Reminder
+import com.example.mobicomp.ui.theme.Primary_dark
 import com.google.accompanist.insets.systemBarsPadding
 import com.google.android.gms.maps.model.LatLng
 import java.time.LocalDate
@@ -65,7 +66,7 @@ fun ReminderEditScreen(
                         contentDescription = null
                     )
                 }
-                Text(text = "Edit Reminder")
+                Text(text = "Edit Reminder", color = Primary_dark)
             }
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
@@ -122,8 +123,11 @@ fun ReminderEditScreen(
                         )
                         navController.popBackStack()
                     },
-                    modifier = Modifier.fillMaxWidth().size(55.dp),
-                    shape = RoundedCornerShape(corner = CornerSize(25.dp))
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .size(55.dp),
+                    shape = RoundedCornerShape(corner = CornerSize(25.dp)),
+                    colors = ButtonDefaults.buttonColors(backgroundColor = Primary_dark)
                 ) {
                     Text(text = "Save changes")
                 }

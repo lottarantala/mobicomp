@@ -21,6 +21,7 @@ import androidx.compose.ui.unit.dp
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.NavController
 import com.example.mobicomp.ui.theme.Primary_dark
+import com.example.mobicomp.ui.theme.Primary_light
 import com.example.mobicomp.ui.theme.Secondary_dark
 
 @Composable
@@ -44,7 +45,8 @@ fun LoginScreen(
                 contentDescription = "login_image",
                 modifier = Modifier
                     .fillMaxWidth()
-                    .size(150.dp)
+                    .size(150.dp),
+                tint = Primary_light
             )
 
             Spacer(modifier = Modifier.height(10.dp))
